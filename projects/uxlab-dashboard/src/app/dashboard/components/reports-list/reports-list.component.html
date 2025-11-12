@@ -1,0 +1,23 @@
+<div class="reports-list-container">
+  <h2 class="section-title">Reports List</h2>
+  
+  <div class="reports-grid">
+    <div class="grid-header">
+      <div class="header-cell name-column">Report Name</div>
+      <div class="header-cell description-column">Description</div>
+      <div class="header-cell action-column">Action</div>
+    </div>
+    
+    <div class="grid-body">
+      @for (report of reports$ | async; track report.id) {
+        <div class="grid-row">
+          <div class="grid-cell name-column">{{ report.name }}</div>
+          <div class="grid-cell description-column">{{ report.description }}</div>
+          <div class="grid-cell action-column">
+            <button class="view-button" (click)="viewReport(report.id)">View</button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

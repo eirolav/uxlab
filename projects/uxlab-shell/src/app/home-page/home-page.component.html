@@ -1,0 +1,22 @@
+<div class="home-page-container">
+  <div class="welcome-section">
+    <h1>{{ welcomeMessage }}</h1>
+    <p>Your centralized platform for all UXLab applications.</p>
+  </div>
+  
+  <div class="news-section">
+    <h2>Latest News</h2>
+    
+    <div class="news-grid">
+      <div class="news-card" *ngFor="let item of newsItems">
+        <div class="news-header">
+          <h3>{{ item.title }}</h3>
+          <span class="news-date">{{ item.date }}</span>
+        </div>
+        <div class="news-content">
+          <p>{{ item.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,213 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"uxlab-shell": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/uxlab-shell",
+			"sourceRoot": "projects/uxlab-shell/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/uxlab-shell/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "projects/uxlab-shell/public",
+								"output": "."
+							}
+						],
+						"styles": [
+							"projects/uxlab-shell/src/styles.scss"
+						],
+						"main": "projects/uxlab-shell/src/main.ts",
+						"outputPath": "dist/uxlab-shell",
+						"index": "projects\\uxlab-shell\\src\\index.html",
+						"extraWebpackConfig": "projects/uxlab-shell/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kB",
+									"maximumError": "1MB"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "4kB",
+									"maximumError": "8kB"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/uxlab-shell/webpack.prod.config.js"
+						},
+						"development": {
+							"optimization": false,
+							"extractLicenses": false,
+							"sourceMap": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"buildTarget": "uxlab-shell:build:production",
+							"extraWebpackConfig": "projects/uxlab-shell/webpack.prod.config.js"
+						},
+						"development": {
+							"buildTarget": "uxlab-shell:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4200,
+						"publicHost": "http://localhost:4200",
+						"extraWebpackConfig": "projects/uxlab-shell/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular/build:extract-i18n"
+				},
+				"test": {
+					"builder": "@angular/build:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/uxlab-shell/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "projects/uxlab-shell/public"
+							}
+						],
+						"styles": [
+							"projects/uxlab-shell/src/styles.scss"
+						]
+					}
+				}
+			}
+		},
+		"uxlab-dashboard": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/uxlab-dashboard",
+			"sourceRoot": "projects/uxlab-dashboard/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/uxlab-dashboard/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "projects/uxlab-dashboard/public",
+								"output": "."
+							}
+						],
+						"styles": [
+							"projects/uxlab-dashboard/src/styles.scss"
+						],
+						"main": "projects/uxlab-dashboard/src/main.ts",
+						"outputPath": "dist/uxlab-dashboard",
+						"index": "projects\\uxlab-dashboard\\src\\index.html",
+						"extraWebpackConfig": "projects/uxlab-dashboard/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kB",
+									"maximumError": "1MB"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "4kB",
+									"maximumError": "8kB"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/uxlab-dashboard/webpack.prod.config.js"
+						},
+						"development": {
+							"optimization": false,
+							"extractLicenses": false,
+							"sourceMap": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"buildTarget": "uxlab-dashboard:build:production",
+							"extraWebpackConfig": "projects/uxlab-dashboard/webpack.prod.config.js"
+						},
+						"development": {
+							"buildTarget": "uxlab-dashboard:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4201,
+						"publicHost": "http://localhost:4201",
+						"extraWebpackConfig": "projects/uxlab-dashboard/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular/build:extract-i18n"
+				},
+				"test": {
+					"builder": "@angular/build:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/uxlab-dashboard/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "projects/uxlab-dashboard/public"
+							}
+						],
+						"styles": [
+							"projects/uxlab-dashboard/src/styles.scss"
+						]
+					}
+				}
+			}
+		}
+	}
+}

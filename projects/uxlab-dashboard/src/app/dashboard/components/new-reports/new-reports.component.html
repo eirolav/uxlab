@@ -1,0 +1,16 @@
+<div class="new-reports-container">
+  <h2 class="section-title">New Reports</h2>
+  
+  <div class="new-reports-list">
+    @for (report of newReports$ | async; track report.id) {
+      <div class="new-report-card">
+        <div class="new-badge">NEW</div>
+        <div class="report-info">
+          <h3 class="report-name">{{ report.name }}</h3>
+          <p class="report-description">{{ report.description }}</p>
+        </div>
+        <button class="view-button" (click)="viewReport(report.id)">View</button>
+      </div>
+    }
+  </div>
+</div>

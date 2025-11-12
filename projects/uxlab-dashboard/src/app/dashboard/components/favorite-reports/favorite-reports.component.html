@@ -1,0 +1,15 @@
+<div class="favorite-reports-container">
+  <h2 class="section-title">Favorite Reports</h2>
+  
+  <div class="favorite-reports-list">
+    @for (report of favoriteReports$ | async; track report.id) {
+      <div class="report-card">
+        <div class="report-info">
+          <h3 class="report-name">{{ report.name }}</h3>
+          <p class="report-description">{{ report.description }}</p>
+        </div>
+        <button class="view-button" (click)="viewReport(report.id)">View</button>
+      </div>
+    }
+  </div>
+</div>

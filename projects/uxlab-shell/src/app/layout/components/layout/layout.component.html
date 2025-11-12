@@ -1,0 +1,13 @@
+<div class="layout-container">
+  <app-header></app-header>
+  
+  <div class="content-area">
+    <app-navigation></app-navigation>
+    
+    <div class="main-content" [class.expanded]="!(isNavigationExpanded$ | async)" [class.collapsed]="isNavigationExpanded$ | async">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  
+  <app-footer></app-footer>
+</div>

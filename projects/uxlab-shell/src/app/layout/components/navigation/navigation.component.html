@@ -1,0 +1,12 @@
+<div class="navigation-container" [class.expanded]="isExpanded$ | async" [class.collapsed]="!(isExpanded$ | async)">
+  <nav class="nav-menu">
+    <ul>
+      <li *ngFor="let item of navItems">
+        <a [routerLink]="item.route" routerLinkActive="active">
+          <span class="nav-icon">{{ item.icon }}</span>
+          <span class="nav-label" *ngIf="isExpanded$ | async">{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
