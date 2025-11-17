@@ -13,7 +13,7 @@
     "run-features": "npm run build:features && npm run serve:features",
 
     "build-components": "ng build uxlab-custom-web-components",
-    "copy-components": "xcopy /E /I /Y dist\\uxlab-custom-web-components\\browser\\main.js Y:\\CDN\\AngularWebComponents",
+    "copy-components": "echo f | xcopy /Y \"dist\\uxlab-custom-web-components\\browser\\main.js\" \".\\projects\\uxlab-shell\\public\\web-components\\angular\\angular-web-components.js\"",
     "run-components": "npm run build-components && npm run copy-components"
   },
   "sideEffects": true,
