@@ -41,13 +41,38 @@
 }
 
 .user-info {
+  display: flex;
+  align-items: center;
   padding: 8px 15px;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
   margin-right: 20px;
+  
+  a {
+    color: white;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .username {
+    margin-right: 10px;
+    font-weight: 500;
+  }
+  
+  .logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    
+    &:hover {
+      background-color: #c0392b;
+    }
+  }
 }

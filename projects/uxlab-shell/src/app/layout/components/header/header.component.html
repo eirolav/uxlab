@@ -6,6 +6,12 @@
     <div class="logo">UXLab Shell</div>
   </div>
   <div class="header-right">
-    <div class="user-info">User</div>
+    <div class="user-info" *ngIf="(isAuthenticated$ | async)">
+      <span class="username">{{ (currentUser$ | async)?.username }}</span>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+    <div class="user-info" *ngIf="!(isAuthenticated$ | async)">
+      <a [routerLink]="['/login']">Login</a>
+    </div>
   </div>
 </div>

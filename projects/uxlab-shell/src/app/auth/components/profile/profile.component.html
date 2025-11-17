@@ -1,0 +1,33 @@
+<div class="profile-container" *ngIf="currentUser$ | async as user">
+  <div class="profile-card">
+    <h2>User Profile</h2>
+    
+    <div class="profile-info">
+      <div class="info-group">
+        <label>Username:</label>
+        <div class="info-value">{{ user.username }}</div>
+      </div>
+      
+      <div class="info-group">
+        <label>Email:</label>
+        <div class="info-value">{{ user.email }}</div>
+      </div>
+      
+      <div class="info-group">
+        <label>User ID:</label>
+        <div class="info-value">{{ user.id }}</div>
+      </div>
+      
+      <div class="info-group">
+        <label>Roles:</label>
+        <div class="info-value">
+          <span class="role-badge" *ngFor="let role of user.roles">{{ role }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="profile-actions">
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>

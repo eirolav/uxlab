@@ -3,10 +3,8 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 module.exports = withModuleFederationPlugin({
 
   name: 'uxlab-dashboard',
-
   exposes: {
-    './uxlab-DashboardModule': './projects/uxlab-dashboard/src/app/dashboard/dashboard.module.ts',
-    './uxlab-DashboardWebComponentModule': './projects/uxlab-dashboard/src/app/dashboard-web-component/dashboard-web-component.module.ts',
+    './uxlab-DashboardModule': './projects/uxlab-dashboard/src/app/dashboard/dashboard.module.ts'
   },
 
   shared: {

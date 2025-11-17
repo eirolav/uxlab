@@ -6,8 +6,22 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <script id="scriptAngularWebComps"></script>
+  <script id="scriptJSWebComps"></script>
+  <script id="scriptJSWebComps2"></script>
+  <script>
+    let srcUrl1 = "http://localhost/cdn/AngularWebComponents/main.js?" + (Math.random() * 100000).toString();
+    let srcUrl2 = "http://localhost/cdn/JavaScriptWebComponents/calculator.js?" + (Math.random() * 100000).toString();
+    let srcUrl3 = "http://localhost/cdn/JavaScriptWebComponents/puzzle.js?" + (Math.random() * 100000).toString();
+    document.getElementById("scriptAngularWebComps").src = srcUrl1;
+    document.getElementById("scriptJSWebComps").src = srcUrl2;
+    document.getElementById("scriptJSWebComps2").src = srcUrl3;
+  </script>
 </head>
 <body>
+  
+
   <app-root></app-root>
 </body>
 </html>

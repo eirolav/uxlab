@@ -1,0 +1,18 @@
+<div>
+    <button (click)="btnOnClick($event)">Incraese the count</button> | <button (click)="btnDestroyEffect($event)">Destroy the Effect</button> | <button (click)="btnRenableEffect($event)">Re-Enable Effect</button>
+    <br />
+    <div>
+        {{ computedCount() }}
+    </div>
+    <div>
+        <ng-container *ngFor="let msg of logMessages">
+            <span>{{msg}}</span>
+            <br />
+        </ng-container>
+    </div>
+
+    <div>
+        The current time is: {{ currentTime() }}
+        <br />
+    </div>
+</div>

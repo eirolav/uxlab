@@ -1,0 +1,56 @@
+This is custom elements page. I am loading web components built in a separate angular application onto this page and hooking into their inputs/outputs.
+
+Note: If this is running in Shell for Module Federation, the shell must load "http://localhost/cdn/AngularWebComponents/main.js"
+<div class="web-component-section-container">
+    <span> This is an basic web component built in angular. It has inputs and outputs an event when the value changes.</span>
+    <uxlab-ele-textbox [id]="props.id" [label]="props.label" [val]="props.value" (valueChange)="onValueChanged($event)"></uxlab-ele-textbox>
+    <br />
+    
+    <div>
+        The output from event listeners: {{ valueEntered }}
+    </div>
+</div>
+<div class="web-component-section-container">
+    <span> This is a complex web component built in angular. It has all the angular code to make an HTTP call to load States from an API. 
+        It will throw an event when submit is clicked that contains the model.
+    </span>
+    <uxlab-ele-address-manager (submitted)="onAdressManagerSubmitted($event)"></uxlab-ele-address-manager>
+    <br />
+    <div>
+        The output from event listeners: <br />
+        @if (addressManagerValue && addressManagerValue.streetAddress != '') {
+            <span>{{ addressManagerValue.streetAddress }}</span><br />
+            @if (addressManagerValue && addressManagerValue.streetAddress2 && addressManagerValue.streetAddress2 != '') {
+                <span>{{ addressManagerValue.streetAddress2 }}</span><br />
+            }
+            <span>{{ addressManagerValue.city }} {{ addressManagerValue.state }}, {{ addressManagerValue.zipCode }}</span>
+        }
+    </div>
+</div>
+<div class="web-component-section-container">
+    <span> This is a simple web component built in plain javascript.</span>
+    
+    <uxlab-ele-calculator (calculation)="onCalculation($event)"></uxlab-ele-calculator>
+    <br />
+    <div>
+        The output from event listeners: {{ calculation }}<br />
+    </div>
+</div>
+
+<div class="web-component-section-container">
+    <span> This is a complex web component built in plain javascript.</span>
+    <uxlab-ele-puzzle src="https://picsum.photos/600/400"></uxlab-ele-puzzle>
+
+    <script>
+        //document.querySelector('image-puzzle').setAttribute('src', 'https://picsum.photos/800/600');
+    </script>
+    
+
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+

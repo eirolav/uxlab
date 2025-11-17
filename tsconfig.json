@@ -33,6 +33,18 @@
     },
     {
       "path": "./projects/uxlab-dashboard/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/uxlab-features/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/uxlab-features/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/uxlab-custom-web-components/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/uxlab-custom-web-components/tsconfig.spec.json"
     }
   ]
 }
